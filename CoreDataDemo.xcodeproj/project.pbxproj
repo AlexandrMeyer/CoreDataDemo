@@ -12,6 +12,7 @@
 		B56FB7B1270B6C9D00922DEE /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B56FB7AF270B6C9D00922DEE /* CoreDataDemo.xcdatamodeld */; };
 		B56FB7B3270B6CA000922DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56FB7B2270B6CA000922DEE /* Assets.xcassets */; };
 		B56FB7B6270B6CA000922DEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56FB7B4270B6CA000922DEE /* LaunchScreen.storyboard */; };
+		B56FB7BE270B761000922DEE /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56FB7BD270B761000922DEE /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B56FB7B2270B6CA000922DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B56FB7B5270B6CA000922DEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B56FB7B7270B6CA000922DEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B56FB7BD270B761000922DEE /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				B56FB7A6270B6C9D00922DEE /* AppDelegate.swift */,
 				B56FB7AA270B6C9D00922DEE /* TaskListViewController.swift */,
+				B56FB7BD270B761000922DEE /* TaskViewController.swift */,
 				B56FB7B2270B6CA000922DEE /* Assets.xcassets */,
 				B56FB7B4270B6CA000922DEE /* LaunchScreen.storyboard */,
 				B56FB7B7270B6CA000922DEE /* Info.plist */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56FB7AB270B6C9D00922DEE /* TaskListViewController.swift in Sources */,
+				B56FB7BE270B761000922DEE /* TaskViewController.swift in Sources */,
 				B56FB7B1270B6C9D00922DEE /* CoreDataDemo.xcdatamodeld in Sources */,
 				B56FB7A7270B6C9D00922DEE /* AppDelegate.swift in Sources */,
 			);
