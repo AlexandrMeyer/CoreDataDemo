@@ -55,9 +55,10 @@ class TaskListViewController: UITableViewController {
     }
     
     @objc private func addNewTask() {
-        let taskVC = TaskViewController()
-        taskVC.delegate = self
-        present(taskVC, animated: true, completion: nil)
+        showAlert(with: "New Task", and: "Want do you wan to do?")
+//        let taskVC = TaskViewController()
+//        taskVC.delegate = self
+//        present(taskVC, animated: true, completion: nil)
     }
     
     private func fetchData() {
@@ -67,6 +68,45 @@ class TaskListViewController: UITableViewController {
             taskList = try context.fetch(fetchRequest)
         } catch let error {
             print("Failed to fetch error: \(error)")
+        }
+    }
+    
+    private func showAlert(with title: String, and message: String) {
+        let alertControllert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let task = alertControllert.textFields?.first?.text, !task.isEmpty else { return }
+            self.save(task)
+        }
+        let cancelSction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+        alertControllert.addAction(saveAction)
+        alertControllert.addAction(cancelSction)
+        alertControllert.addTextField { textField in
+            textField.placeholder = "New task"
+        }
+        
+        present(alertControllert, animated: true, completion: nil)
+    }
+    
+    private func save(_ taskName: String) {
+        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return }
+        guard let task = NSManagedObject(entity: entityDescription, insertInto: context) as? Task else { return }
+        task.title = taskName
+        taskList.append(task)
+        
+        let cellIndex = IndexPath(row: taskList.count - 1, section: 0)
+        tableView.insertRows(at: [cellIndex], with: .automatic)
+        
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch let error {
+                print(error)
+            }
         }
     }
 }
