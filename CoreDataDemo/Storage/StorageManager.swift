@@ -1,31 +1,20 @@
 //
-//  AppDelegate.swift
+//  StorageManager.swift
 //  CoreDataDemo
 //
-//  Created by Александр on 4.10.21.
+//  Created by Александр on 5.10.21.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: TaskListViewController())
-        return true
-    }
+class StorageManager {
     
-    func applicationWillTerminate(_ application: UIApplication) {
-        saveContext()
-    }
-
+    static let shared = StorageManager()
+    
     // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
+    // Точка входа в базу данных
+    var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreDataDemo")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -34,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
+    
+    init() {}
+    
     // MARK: - Core Data Saving support
     func saveContext() {
         let context = persistentContainer.viewContext
