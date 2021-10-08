@@ -14,6 +14,7 @@
 		B56FB7B6270B6CA000922DEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56FB7B4270B6CA000922DEE /* LaunchScreen.storyboard */; };
 		B56FB7BE270B761000922DEE /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56FB7BD270B761000922DEE /* TaskViewController.swift */; };
 		B56FB7C5270C323900922DEE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56FB7C4270C323900922DEE /* StorageManager.swift */; };
+		B5EC744527106075009BDBDA /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EC744427106075009BDBDA /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B56FB7B7270B6CA000922DEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B56FB7BD270B761000922DEE /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		B56FB7C4270C323900922DEE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		B5EC744427106075009BDBDA /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 		B56FB7A5270B6C9D00922DEE /* CoreDataDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B5EC74462710802C009BDBDA /* Extensions */,
 				B56FB7C0270C319E00922DEE /* ViewControllers */,
-				B56FB7C6270C324100922DEE /* Storage */,
+				B56FB7C6270C324100922DEE /* Services */,
 				B56FB7C3270C31DD00922DEE /* Sources */,
 				B56FB7BF270C319200922DEE /* App */,
 				B56FB7C1270C31BB00922DEE /* Storyboards */,
@@ -110,12 +113,20 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		B56FB7C6270C324100922DEE /* Storage */ = {
+		B56FB7C6270C324100922DEE /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B56FB7C4270C323900922DEE /* StorageManager.swift */,
 			);
-			path = Storage;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B5EC74462710802C009BDBDA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5EC744427106075009BDBDA /* AlertController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				B56FB7BE270B761000922DEE /* TaskViewController.swift in Sources */,
 				B56FB7C5270C323900922DEE /* StorageManager.swift in Sources */,
 				B56FB7B1270B6C9D00922DEE /* CoreDataDemo.xcdatamodeld in Sources */,
+				B5EC744527106075009BDBDA /* AlertController.swift in Sources */,
 				B56FB7A7270B6C9D00922DEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

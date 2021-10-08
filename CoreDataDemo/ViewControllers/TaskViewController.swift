@@ -6,11 +6,8 @@
 //
 
 import UIKit
-import CoreData
 
 class TaskViewController: UIViewController {
-    
-    var delegate: TaskViewControllerDelegate?
     
     private let context = StorageManager.shared.persistentContainer.viewContext
     
@@ -99,20 +96,11 @@ class TaskViewController: UIViewController {
     }
     
     @objc private func save() {
-        // Прежде чем создать экземпляр модели, создаём описание сущности
-        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return }
-        guard let task = NSManagedObject(entity: entityDescription, insertInto: context) as? Task else { return }
         guard newTaskTextField.text?.isEmpty == false else { return }
-        task.title = newTaskTextField.text
-        
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch let error {
-                print(error)
-            }
+        StorageManager.shared.save(newTaskTextField.text ?? "") { task in
+            task.title = newTaskTextField.text
         }
-        delegate?.reloadData()
+        
         dismiss(animated: true, completion: nil)
     }
     
